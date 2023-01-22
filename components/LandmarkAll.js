@@ -20,8 +20,13 @@ import {
 import { useState } from "react";
 import videos from "../pages/api/videos";
 
+const randomizeVideos = (videos) => {
+  return videos.sort(() => Math.random() - 0.5);
+};
+
 const Landmark1 = () => {
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  // const [currentVideo, setCurrentVideo] = useState(randomizeVideos(videos)[0]);
   const [currentPreview, setCurrentPreview] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -32,40 +37,30 @@ const Landmark1 = () => {
   });
 
   const handleNext = () => {
-    if (currentPreview === 2) {
-      setCurrentPreview(0);
-    } else {
-      setCurrentPreview(currentPreview + 1);
-    }
     const currentIndex = videos.findIndex((v) => v.id === currentVideo.id);
-    const nextVideo =
-      currentIndex === videos.length - 1 ? videos[0] : videos[currentIndex + 1];
-    setCurrentVideo(nextVideo);
+    setCurrentPreview(currentIndex);
+    const nextIndex = (currentIndex + 1) % videos.length;
+    setCurrentVideo(videos[nextIndex]);
   };
 
   const handlePrev = () => {
-    if (currentPreview === 0) {
-      setCurrentPreview(2);
-    } else {
-      setCurrentPreview(currentPreview - 1);
-    }
     const currentIndex = videos.findIndex((v) => v.id === currentVideo.id);
-    const prevVideo =
-      currentIndex === 0 ? videos[videos.length - 1] : videos[currentIndex - 1];
-    setCurrentVideo(prevVideo);
+    setCurrentPreview(currentIndex);
+    const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
+    setCurrentVideo(videos[prevIndex]);
   };
 
-  const firstFiveVideos = videos.slice(0, 5);
+  // const firstFiveVideos = videos.slice(0);
 
   return (
     <>
-      <Flex direction={"column"} pt={"6rem"}>
+      <Flex direction={"column"} pt={"6rem"} pb={"6rem"}>
         <Text
           as={"b"}
           pl={{ lg: "4rem" }}
           align={{ base: "center", lg: "left" }}
           fontSize={{ base: "lg", md: "xl", lg: "2xl" }}>
-          Butuan Landmarks
+          All Videos
         </Text>
         <Flex align={"center"}>
           <Button m={"0"} p={"0"} bg="transparent" onClick={handlePrev}>
@@ -74,7 +69,7 @@ const Landmark1 = () => {
             </Flex>
           </Button>
           <HStack>
-            {firstFiveVideos
+            {videos
               .slice(currentPreview, currentPreview + previewsPerPage)
               .map((video) => (
                 <Box key={video.id}>

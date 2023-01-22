@@ -8,33 +8,33 @@ const Layout = ({ children }) => {
       <Flex
         px={{ base: "0", lg: "10rem" }}
         as={"nav"}
-        bg="black"
+        bg="gray.900"
         color="white.900"
-        py={"5"}
+        py={{ base: "4", md: "5", lg: "6" }}
         align={"center"}
+        // boxShadow="xl"
+        borderBottom="8px"
+        borderColor="green.900"
         justify={{ base: "center", lg: "flex-start" }}>
         <Navbar />
       </Flex>
       <Flex
-        // px={{ base: "0", lg: "10rem" }}
         flexDirection="column"
         flex={1}
-        // px={"7rem"}
         bg="black"
         minH={"100vh"}
         color={"white"}
         direction={"column"}
-        // justify={{ base: "space-around", sm: "center" }}
-        align={"center"}
-        // py={{ base: "15rem", lg: "8rem" }}
-      >
+        align={"center"}>
         {children}
       </Flex>
       <Flex
         as={"footer"}
         py={"4"}
-        bg="black"
+        bg="gray.900"
         color="white.900"
+        borderTop="4px"
+        borderColor="green.900"
         justify="center">
         <Footer />
       </Flex>

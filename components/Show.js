@@ -162,7 +162,9 @@ export default function Show() {
         isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader bg="black">{currentVideo.title}</ModalHeader>
+          <ModalHeader bg="black" color={"white"}>
+            {currentVideo.title}
+          </ModalHeader>
           <ModalBody justify={"center"} bg="black">
             <AspectRatio ratio={16 / 9}>
               <iframe
@@ -176,8 +178,9 @@ export default function Show() {
             <Button
               size={{ base: "sm", md: "lg" }}
               bg="green.900"
+              color={"white"}
               onClick={onClose}>
-              <Text fontSize={{ base: "xs", md: "2xl" }}>Close</Text>
+              <Text fontSize={{ base: "xs", md: "xl" }}>Close</Text>
             </Button>
           </ModalFooter>
         </ModalContent>

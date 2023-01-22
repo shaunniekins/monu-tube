@@ -73,6 +73,25 @@ const videos = [
       "https://i.ytimg.com/vi/Y1ZJ-_VKZs0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCaBuaTPH5BfdbrowahzOfCPD5SMg",
     videoUrl: "https://www.youtube.com/embed/Y1ZJ-_VKZs0",
   },
+  {
+    //Add ons
+    id: 1,
+    title: "Video 1",
+    thumbnail:
+      "https://i.ytimg.com/vi/KA_KPmTxPSg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOGNq2kmP6DgjDkWXKH6WVxwsdRg",
+    // videoUrl: "https://www.youtube.com/embed/KA_KPmTxPSg",
+    videoUrl:
+      "https://drive.google.com/file/d/1tgt1asS_P9h2kRV84pnVr0KVePc-StVK/preview",
+    text: "hello",
+  },
+  {
+    id: 2,
+    title: "Video 2",
+    thumbnail:
+      "https://i.ytimg.com/vi/vdiYtiKD8eI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDW-wQW2-fcgmH_f4L1WyQb31ozSg",
+    videoUrl:
+      "https://drive.google.com/file/d/101yZMwce4L89GHu6W8ILTFuC_l3IOwHo/preview",
+  },
 ];
 
 export default videos;

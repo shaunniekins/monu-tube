@@ -55,7 +55,7 @@ const Landmark2 = () => {
     setCurrentVideo(prevVideo);
   };
 
-  const remainingVideos = videos.slice(5);
+  const remainingVideos = videos.slice(5, 10);
 
   return (
     <>
@@ -64,7 +64,7 @@ const Landmark2 = () => {
           as={"b"}
           pl={{ lg: "4rem" }}
           align={{ base: "center", lg: "left" }}
-          fontSize={"2xl"}>
+          fontSize={{ base: "lg", md: "xl", lg: "2xl" }}>
           CSU Landmarks
         </Text>
         <Flex align={"center"}>
@@ -99,7 +99,7 @@ const Landmark2 = () => {
           </Button>
           <Modal
             colorScheme="green"
-            size={"6xl"}
+            size={{ base: "1xl", lg: "6xl" }}
             isOpen={isOpen}
             onClose={onClose}
             isCentered>
@@ -118,8 +118,12 @@ const Landmark2 = () => {
                 </AspectRatio>
               </ModalBody>
               <ModalFooter bg={"black"}>
-                <Button bg="green.900" color={"white"} onClick={onClose}>
-                  Close
+                <Button
+                  size={{ base: "sm", md: "lg" }}
+                  bg="green.900"
+                  color={"white"}
+                  onClick={onClose}>
+                  <Text fontSize={{ base: "xs", md: "xl" }}>Close</Text>
                 </Button>
               </ModalFooter>
             </ModalContent>
