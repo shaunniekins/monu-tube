@@ -1,37 +1,41 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 
 const Layout = ({ children }) => {
   return (
-    <Flex flexDirection="column" w="100%">
+    <Flex flexDirection="column" minH={"100vh"}>
       <Flex
+        px={{ base: "0", lg: "10rem" }}
         as={"nav"}
-        w={"100%"}
-        // bg={"white"}
-        colorScheme="green"
+        bg="black"
         color="white.900"
-        // color={"blue"}
-        justify={{ base: "center", lg: "flex-start" }}
-        pl={{
-          base: 0,
-          lg: 40,
-        }}
-        py={{
-          base: "4",
-          lg: "5",
-        }}>
+        py={"5"}
+        align={"center"}
+        justify={{ base: "center", lg: "flex-start" }}>
         <Navbar />
       </Flex>
-      {/* <Flex align={"center"} justify={"center"} w={"100%"}> */}
-      {children}
-      {/* </Flex> */}
+      <Flex
+        // px={{ base: "0", lg: "10rem" }}
+        flexDirection="column"
+        flex={1}
+        // px={"7rem"}
+        bg="black"
+        minH={"100vh"}
+        color={"white"}
+        direction={"column"}
+        // justify={{ base: "space-around", sm: "center" }}
+        align={"center"}
+        // py={{ base: "15rem", lg: "8rem" }}
+      >
+        {children}
+      </Flex>
       <Flex
         as={"footer"}
-        py={"1rem"}
-        colorScheme={"green"}
-        justify={"center"}
-        w={"100%"}>
+        py={"4"}
+        bg="black"
+        color="white.900"
+        justify="center">
         <Footer />
       </Flex>
     </Flex>
