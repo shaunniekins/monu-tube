@@ -59,7 +59,10 @@ const Landmark1 = () => {
 
   return (
     <>
-      <Flex direction={"column"} pt={"6rem"}>
+      <Flex
+        direction={"column"}
+        mt={{ base: "6rem", md: "-4rem" }}
+        zIndex={"1"}>
         <Text
           as={"b"}
           pl={{ lg: "4rem" }}
@@ -105,7 +108,10 @@ const Landmark1 = () => {
             isCentered>
             <ModalOverlay />
             <ModalContent>
-              <ModalHeader bg={"black"} color={"white"}>
+              <ModalHeader
+                fontSize={{ base: "md", md: "lg", lg: "xl" }}
+                bg={"black"}
+                color={"white"}>
                 {currentVideo.title}
               </ModalHeader>
               <ModalBody bg="black">
@@ -118,13 +124,13 @@ const Landmark1 = () => {
                 </AspectRatio>
               </ModalBody>
               <ModalFooter bg={"black"}>
-                <Button
+                {/* <Button
                   size={{ base: "sm", md: "lg" }}
                   bg="green.900"
                   color={"white"}
                   onClick={onClose}>
                   <Text fontSize={{ base: "xs", md: "xl" }}>Close</Text>
-                </Button>
+                </Button> */}
               </ModalFooter>
             </ModalContent>
           </Modal>

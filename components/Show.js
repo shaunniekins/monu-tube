@@ -9,6 +9,7 @@ import {
   Button,
   Link,
   Container,
+  Flex,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -56,11 +57,31 @@ export default function Show() {
   // This list contains all the data for carousels
   // This can be static or loaded from a server
 
+  const handlePrev = () => {
+    // use the current index to get the previous video
+    const currentIndex = videos.findIndex((v) => v.id === currentVideo.id);
+    // if current video is the first video, set the current video to the last video
+    const prevVideo =
+      currentIndex === 0 ? videos[videos.length - 1] : videos[currentIndex - 1];
+    setCurrentVideo(prevVideo);
+    slider.slickPrev();
+  };
+
+  const handleNext = () => {
+    // use the current index to get the next video
+    const currentIndex = videos.findIndex((v) => v.id === currentVideo.id);
+    // if current video is the last video, set the current video to the first video
+    const nextVideo =
+      currentIndex === videos.length - 1 ? videos[0] : videos[currentIndex + 1];
+    setCurrentVideo(nextVideo);
+    slider.slickNext();
+  };
+
   return (
     <Box
       cursor={"pointer"}
       position={"relative"}
-      height={"700px"}
+      height={{ base: "600px", lg: "800px" }}
       width={"full"}
       overflow={"hidden"}>
       {/* CSS files for react-slick */}
@@ -84,20 +105,9 @@ export default function Show() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => {
-          slider?.slickPrev();
-          const currentIndex = videos.findIndex(
-            (v) => v.id === currentVideo.id
-          );
-          const prevVideo =
-            currentIndex === 0
-              ? videos[videos.length - 1]
-              : videos[currentIndex - 1];
-          setCurrentVideo(prevVideo);
-        }}>
+        onClick={handlePrev}>
         <BiLeftArrowAlt size="40px" />
       </IconButton>
-      {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
         variant="ghost"
@@ -106,50 +116,57 @@ export default function Show() {
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
-        onClick={() => {
-          slider?.slickNext();
-          const currentIndex = videos.findIndex(
-            (v) => v.id === currentVideo.id
-          );
-          const nextVideo =
-            currentIndex === videos.length - 1
-              ? videos[0]
-              : videos[currentIndex + 1];
-          setCurrentVideo(nextVideo);
-        }}>
+        onClick={handleNext}>
         <BiRightArrowAlt size="40px" />
       </IconButton>
+
       {/* Slider */}
       <Slider ref={(slider) => setSlider(slider)} {...settings}>
         {videos.map((card, index) => (
           <Box
             key={index}
-            height={"6xl"}
+            h={"6xl"}
             position="relative"
-            backgroundPosition="center"
+            backgroundPosition={{ base: "right", lg: "center" }}
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
             onClick={onOpen}
             src={currentVideo.thumbnail}
+            filter="auto"
+            brightness="40%"
             alt={currentVideo.title}
             backgroundImage={`url(${card.thumbnail})`}>
-            {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
-              <Stack
+            <Flex
+              filter="0"
+              brightness="0"
+              p={{ base: "2rem", md: "10rem", lg: "15rem" }}>
+              <Flex
+                direction={"column"}
                 spacing={6}
                 w={"full"}
                 maxW={"lg"}
-                position="absolute"
-                top="50%"
-                transform="translate(0, -50%)">
-                {/* <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-                  {card.title}
+                align={{ base: "center", lg: "flex-start" }}
+                justify={"center"}>
+                <Heading fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}>
+                  {card.title.toUpperCase()}
                 </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
-                  {card.text}
-                </Text> */}
-              </Stack>
-            </Container>
+                <Text
+                  pb={"4rem"}
+                  textAlign={{ base: "center", sm: "justify" }}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color="white">
+                  {card.description}
+                </Text>
+                <Button
+                  // size={{ base: "sm", md: "lg" }}
+                  bg="green.900"
+                  color={"white"}
+                  maxW={"10rem"}
+                  onClick={onOpen}>
+                  <Text fontSize={{ base: "xs", md: "xl" }}>PLAY</Text>
+                </Button>
+              </Flex>
+            </Flex>
           </Box>
         ))}
       </Slider>
@@ -162,7 +179,10 @@ export default function Show() {
         isCentered>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader bg="black" color={"white"}>
+          <ModalHeader
+            bg="black"
+            color={"white"}
+            fontSize={{ base: "md", md: "lg", lg: "xl" }}>
             {currentVideo.title}
           </ModalHeader>
           <ModalBody justify={"center"} bg="black">
@@ -175,13 +195,13 @@ export default function Show() {
             </AspectRatio>
           </ModalBody>
           <ModalFooter bg="black">
-            <Button
+            {/* <Button
               size={{ base: "sm", md: "lg" }}
               bg="green.900"
               color={"white"}
               onClick={onClose}>
               <Text fontSize={{ base: "xs", md: "xl" }}>Close</Text>
-            </Button>
+            </Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>
