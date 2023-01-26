@@ -59,10 +59,7 @@ const Landmark1 = () => {
 
   return (
     <>
-      <Flex
-        direction={"column"}
-        mt={{ base: "6rem", md: "-4rem" }}
-        zIndex={"1"}>
+      <Flex direction={"column"} mt={"-4rem"} zIndex={"1"}>
         <Text
           as={"b"}
           pl={{ lg: "4rem" }}
@@ -89,7 +86,9 @@ const Landmark1 = () => {
                       }}
                       src={video.thumbnail}
                       alt={video.title}
-                      w={"md"}
+                      w={{ md: "xs", lg: "md" }}
+                      h={{ base: "5xs", md: "2xs" }}
+                      size={"cover"}
                     />
                   </Link>
                 </Box>
@@ -123,15 +122,7 @@ const Landmark1 = () => {
                   />
                 </AspectRatio>
               </ModalBody>
-              <ModalFooter bg={"black"}>
-                {/* <Button
-                  size={{ base: "sm", md: "lg" }}
-                  bg="green.900"
-                  color={"white"}
-                  onClick={onClose}>
-                  <Text fontSize={{ base: "xs", md: "xl" }}>Close</Text>
-                </Button> */}
-              </ModalFooter>
+              <ModalFooter bg="black" />
             </ModalContent>
           </Modal>
         </Flex>
