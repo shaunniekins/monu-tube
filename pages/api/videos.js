@@ -1,118 +1,117 @@
 const videos = [
   {
     id: 1,
-    title: "Video 1",
+    title: "Butuan National Museum",
     thumbnail:
-      "https://i.ytimg.com/vi/KA_KPmTxPSg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOGNq2kmP6DgjDkWXKH6WVxwsdRg",
+      "https://drive.google.com/uc?export=view&id=1puwumkQwZ2WkYV6eaew4MjHjkXb7rYrU",
     // videoUrl: "https://www.youtube.com/embed/KA_KPmTxPSg",
     videoUrl:
-      "https://drive.google.com/file/d/1tgt1asS_P9h2kRV84pnVr0KVePc-StVK/preview",
+      "https://drive.google.com/file/d/1dTPGKI0J3HNAKtoCrCwAcVRG3kxtUNPr/preview",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "This museum is the repository of historical and cultural materials and artifacts that proves Butuan’s prehistoric existence and rich cultural heritage.",
   },
   {
     id: 2,
-    title: "Video 2",
+    title: "Magellan's Anchorage",
     thumbnail:
-      "https://i.ytimg.com/vi/vdiYtiKD8eI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDW-wQW2-fcgmH_f4L1WyQb31ozSg",
+      "https://drive.google.com/uc?export=view&id=1sS1qUuBxv94fTIOpsOrWNo0y-cfkfOb8",
     videoUrl:
       "https://drive.google.com/file/d/101yZMwce4L89GHu6W8ILTFuC_l3IOwHo/preview",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "March 29, 1521, the Portuguese-born, Spanish-commissioned Magellan and the two Butuanon brother kings Siagu and Colombu made the first recorded blood compact. Over a long period of sedimentation, Mazzaua, Ambangan and Suatan Islands fused however with the mainland.",
   },
   {
     id: 3,
-    title: "Video 3",
+    title: "Suspension Bridge",
     thumbnail:
-      "https://i.ytimg.com/vi/9ealmv8XCPE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCLA1vACCxpRGkxGX_FzIdrqa4IRA",
+      "https://drive.google.com/uc?export=view&id=1vyGWa50TaQUn6PIlUDGCGvyT9ys4ALB-",
     videoUrl: "https://www.youtube.com/embed/9ealmv8XCPE",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "The longest suspension bridge in Mindanao at 882 meters in length, the President Diosdado Macapagal Bridge is an alternative route that links Butuanons to the island of Mindanao.",
   },
   {
     id: 4,
-    title: "Video 4",
+    title: "Guigona Park",
     thumbnail:
-      "https://i.ytimg.com/vi/lpraYE-TLeM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtF5i0qLWIzaQIRflXu65FkQql8Q",
-    videoUrl: "https://www.youtube.com/embed/lpraYE-TLeM",
+      "https://drive.google.com/uc?export=view&id=1Whf6MZxBwquWNzXB-BT-wIVUKvEdamME",
+    videoUrl:
+      "https://drive.google.com/file/d/1JrpdNL0nJW5bPGla9no2b5URAZC1vTWT/preview",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "Guingona Park is a park in Northern Mindanao located on Jose S. Aquino Avenue. Guingona Park is situated nearby to the memorial The Raising of the Philippine Flag in Mindanao historical marker and the church Bell Tower.",
   },
   {
     id: 5,
-    title: "Video 5",
+    title: "Banza Church Ruins",
     thumbnail:
-      "https://i.ytimg.com/vi/GqgWz-n4hdE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAjqSMfEy6o1G61fAC-j-LRe4y87g",
-    videoUrl: "https://www.youtube.com/embed/GqgWz-n4hdE",
+      "https://drive.google.com/uc?export=view&id=1cww4Lx_pwu2ukK88kY-hP80DipTIDoQu",
+    videoUrl:
+      "https://drive.google.com/file/d/101yZMwce4L89GHu6W8ILTFuC_l3IOwHo/preview",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
   },
   {
     id: 6,
-    title: "Video 6",
+    title: "HERO Learning Commons",
     thumbnail:
-      "https://i.ytimg.com/vi/7SIlor1Zi9w/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCdMlxo44jpPvnulhGPjtqW3KWQPQ",
+      "https://drive.google.com/uc?export=view&id=1FCViPl_-GBmOQctKxE640ksrPzq5YQOQ",
     videoUrl: "https://www.youtube.com/embed/7SIlor1Zi9w",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+    description: "CSU Library",
   },
   {
     id: 7,
-    title: "Video 7",
+    title: "Kinaadman Hall",
     thumbnail:
-      "https://i.ytimg.com/vi/VhmnPNIjvKc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPNDEtKSVUJrpVRKZ23OuUrIH-Gw",
-    videoUrl: "https://www.youtube.com/embed/VhmnPNIjvKc",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "https://drive.google.com/uc?export=view&id=1F4XVfM-S4PU6JDgxzZGMmo-WFYpncSdK",
+    videoUrl:
+      "https://drive.google.com/file/d/1tgt1asS_P9h2kRV84pnVr0KVePc-StVK/preview",
+    description: "CHASS Building",
   },
   {
     id: 8,
-    title: "Video 8",
+    title: "Harrison Bridge",
     thumbnail:
       "https://i.ytimg.com/vi/-Y_y96pbQZ4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBvhJZZE4ZRJ5Wgaswf0bfxULxcqg",
     videoUrl: "https://www.youtube.com/embed/-Y_y96pbQZ4",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+    description: "A bridge ...",
   },
   {
     id: 9,
-    title: "Video 9",
+    title: "Admin Building",
     thumbnail:
-      "https://i.ytimg.com/vi/-vrnlAX7w2A/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhKIF4oZTAP&rs=AOn4CLAFHelOEhb8AFcfQ_afcAKRgFXb_w",
+      "https://drive.google.com/uc?export=view&id=1HV_TaIDHIzz6yqYA0hTshAUvoM5rJesB",
     videoUrl: "https://www.youtube.com/embed/-vrnlAX7w2A",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+    description: "Admin for admin stuff",
   },
   {
     id: 10,
-    title: "Video 10",
+    title: "Hiraya Hall",
     thumbnail:
-      "https://i.ytimg.com/vi/Y1ZJ-_VKZs0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCaBuaTPH5BfdbrowahzOfCPD5SMg",
-    videoUrl: "https://www.youtube.com/embed/Y1ZJ-_VKZs0",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "https://drive.google.com/uc?export=view&id=1UKulGoScS7sPxZ5jr4iGi9-lL8jb1DU2",
+    videoUrl:
+      "https://drive.google.com/file/d/1GORRiauvmNCYtsLS92x9nWSqZZ2Pkc_C/preview",
+    description: "CCIS Building",
   },
+  // Add-ons
   {
-    //Add ons
     id: 1,
-    title: "Video 1",
+    title: "Butuan National Museum",
     thumbnail:
-      "https://i.ytimg.com/vi/KA_KPmTxPSg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOGNq2kmP6DgjDkWXKH6WVxwsdRg",
+      "https://drive.google.com/uc?export=view&id=1puwumkQwZ2WkYV6eaew4MjHjkXb7rYrU",
     // videoUrl: "https://www.youtube.com/embed/KA_KPmTxPSg",
     videoUrl:
-      "https://drive.google.com/file/d/1tgt1asS_P9h2kRV84pnVr0KVePc-StVK/preview",
+      "https://drive.google.com/file/d/1dTPGKI0J3HNAKtoCrCwAcVRG3kxtUNPr/preview",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "This museum is the repository of historical and cultural materials and artifacts that proves Butuan’s prehistoric existence and rich cultural heritage.",
   },
   {
     id: 2,
-    title: "Video 2",
+    title: "Magellan's Anchorage",
     thumbnail:
-      "https://i.ytimg.com/vi/vdiYtiKD8eI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDW-wQW2-fcgmH_f4L1WyQb31ozSg",
+      "https://drive.google.com/uc?export=view&id=1sS1qUuBxv94fTIOpsOrWNo0y-cfkfOb8",
     videoUrl:
       "https://drive.google.com/file/d/101yZMwce4L89GHu6W8ILTFuC_l3IOwHo/preview",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo harum rem facere, laborum expedita voluptate doloribus numquam, perspiciatis dolore vitae sint excepturi. Assumenda eius commodi cumque magni fugiat nisi a?",
+      "March 29, 1521, the Portuguese-born, Spanish-commissioned Magellan and the two Butuanon brother kings Siagu and Colombu made the first recorded blood compact. Over a long period of sedimentation, Mazzaua, Ambangan and Suatan Islands fused however with the mainland.",
   },
 ];
 
