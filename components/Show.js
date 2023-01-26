@@ -43,7 +43,6 @@ export default function Show() {
 
   return (
     <Box
-      cursor={"pointer"}
       position={"relative"}
       height={{ base: "600px", lg: "800px" }}
       width={"full"}
@@ -80,13 +79,14 @@ export default function Show() {
             >
               <Heading
                 letterSpacing={"-3px"}
+                textAlign={{ base: "center", md: "justify" }}
                 fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}>
                 {card.title.toUpperCase()}
               </Heading>
               <Text
                 pt={"1rem"}
                 pb={"4rem"}
-                textAlign={{ xs: "center", md: "justify" }}
+                textAlign={{ base: "center", md: "justify" }}
                 fontSize={{ base: "md", lg: "lg" }}
                 color="white">
                 {card.description}
@@ -95,6 +95,7 @@ export default function Show() {
                 size={{ base: "sm", md: "lg" }}
                 bg="green.900"
                 color={"white"}
+                cursor={"pointer"}
                 // maxW={"10rem"}
                 onClick={onOpen}>
                 <Text fontSize={{ base: "xs", md: "xl" }}>PLAY</Text>
