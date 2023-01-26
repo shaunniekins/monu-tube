@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Heading, Text, Button, Flex } from "@chakra-ui/react";
 import Slider from "react-slick";
-import videos from "@/pages/api/videos";
+import videos from "../pages/api/videos";
 import {
   Modal,
   ModalOverlay,
@@ -17,10 +17,18 @@ import { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 
 export default function Show() {
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  // const [currentVideo, setCurrentVideo] = useState(videos[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
   const [slider, setSlider] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  // const openModal = () => {
+  //   onOpen();
+  // };
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
 
   const settings = {
     // dots: true,
@@ -63,12 +71,12 @@ export default function Show() {
       {/* Slider */}
       <Slider ref={(slider) => setSlider(slider)} {...settings}>
         {videos.map((card, index) => (
-          <Flex h={"6xl"}>
+          <Flex h={"6xl"} cursor={"pointer"} onClick={toggleModal} key={index}>
             <Flex
               h={"6xl"}
               mb={"-75rem"}
               // onClick={onOpen}
-              py={{ base: "2rem", md: "10rem", lg: "15rem" }}
+              py={{ base: "8rem", md: "15rem", lg: "15rem" }}
               px={{ base: "2rem", md: "10rem", lg: "6rem" }}
               // spacing={6}
               // w={"full"}
@@ -78,8 +86,8 @@ export default function Show() {
               // justify={{ base: "flex-start", lg: "center" }}
             >
               <Heading
-                letterSpacing={"-3px"}
-                textAlign={{ base: "center", md: "justify" }}
+                letterSpacing={{ base: "-1px", md: "-3px" }}
+                textAlign={{ base: "center", md: "left" }}
                 fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}>
                 {card.title.toUpperCase()}
               </Heading>
@@ -91,27 +99,27 @@ export default function Show() {
                 color="white">
                 {card.description}
               </Text>
-              <Button
+              {/* <Button
                 size={{ base: "sm", md: "lg" }}
                 bg="green.900"
                 color={"white"}
                 cursor={"pointer"}
-                // maxW={"10rem"}
-                onClick={onOpen}>
+                onClick={toggleModal}
+                >
                 <Text fontSize={{ base: "xs", md: "xl" }}>PLAY</Text>
-              </Button>
+              </Button> */}
             </Flex>
             <Box
-              key={index}
-              center
+              // key={index}
               zIndex={-1}
               h={"6xl"}
               position="relative"
-              n
               filter="auto"
               brightness="40%"
-              src={currentVideo.thumbnail}
-              alt={currentVideo.title}
+              // src={currentVideo.thumbnail}
+              // alt={currentVideo.title}
+              src={card.thumbnail}
+              alt={card.title}
               backgroundPosition={{ base: "right", lg: "center" }}
               backgroundRepeat="no-repeat"
               backgroundSize="cover"
@@ -124,8 +132,8 @@ export default function Show() {
       <Modal
         colorScheme="green"
         size={{ base: "1xl", lg: "6xl" }}
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={modalOpen}
+        onClose={toggleModal}
         isCentered>
         <ModalOverlay />
         <ModalContent>
