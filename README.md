@@ -12,4 +12,4 @@
 
 - **Built with:** React and Vanilla CSS
 
-**Note:**The Google Drive link that was previously used for the videos and images has been deleted.
+**Note:** The Google Drive link that was previously used for the videos and images has been deleted.
